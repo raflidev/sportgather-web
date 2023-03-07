@@ -14,7 +14,7 @@ function Venue() {
         return "Rp "+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
   return (
-    <div className='bg-gray-300 min-h-screen'>
+    <div className='bg-gray-300 min-h-screen font-inter'>
       <div className="flex justify-center">
         <div className=" w-full lg:w-1/2 bg-white min-h-screen px-10 py-10 pb-20">
             <div className=''>
@@ -25,10 +25,10 @@ function Venue() {
             <div className='space-y-6'>
                 <div className='w-1/12'>
                     <Link to="/" className='flex items-center space-x-2 border border-black rounded px-2 py-1 mt-10'>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                        <p>Back</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                      </svg>
+                      <p>Back</p>
                     </Link>
                 </div>
 
@@ -53,14 +53,14 @@ function Venue() {
                 </div>
                 <div className='space-y-2'>
                     <h1 className='text-3xl font-bold'>{data.venue}</h1>
-                    <p className='text text-gray-400'>{data.alamat}</p>
+                    <p className='font-semibold text-lg text-gray-500'>{data.alamat}</p>
                 </div>
 
                 <div>
                     <h1 className='text-3xl font-bold'>Price</h1>
                     <div className='space-y-2'>
-                        <div className='items-center space-x-2 text-xl pt-2'>
-                            <ul className='list-disc pl-3 space-y-2'>
+                        <div className='items-center space-x-2 text-lg pt-2'>
+                            <ul className='space-y-2 font-semibold text-gray-500'>
                                 <li>Siang : {rupiah(data.sewa.siang)}</li>
                                 <li>Malam : {rupiah(data.sewa.malam)}</li>
                             </ul>
@@ -71,13 +71,19 @@ function Venue() {
                 <div>
                     <h1 className='text-3xl font-bold'>Member</h1>
                     <div className='space-y-2'>
-                        <div className='items-center space-x-2 text-xl pt-2'>
-                            <ul className='list-disc pl-3 space-y-2'>
+                        <div className='items-center space-x-2 text-lg pt-2'>
+                            <ul className='space-y-2 font-semibold text-gray-500'>
                                 <li>Weekday : {rupiah(data.member_perbulan.weekday)}</li>
                                 <li>Weekend : {rupiah(data.member_perbulan.weekend)}</li>
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                <div className='flex'>
+                  <a href={`https://api.whatsapp.com/send?phone=${data.no_wa}&text=Halo, saya mau booking ${data.venue}`} target="_blank" rel="noreferrer"  className='py-3 px-8 bg-green-300 rounded-full w-full text-center font-bold'>
+                      Chat Sekarang
+                  </a>
                 </div>
 
                 <div>
@@ -89,7 +95,11 @@ function Venue() {
                     </iframe>
                 </div>
 
-                <div className='fixed bottom-0 left-0 w-full'>
+                
+                <div>
+                  <h1 className='text-3xl font-bold'>Lainnya</h1>
+                </div>
+                {/* <div className='fixed bottom-0 left-0 w-full'>
                     <div className='flex justify-center'>
                         <div className='w-1/2 bg-white py-5'>
                             <div className='flex justify-between px-6 items-center'>
@@ -100,7 +110,7 @@ function Venue() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             
 
