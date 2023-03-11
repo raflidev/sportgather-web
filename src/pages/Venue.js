@@ -1,8 +1,10 @@
 import React from 'react'
+import { Carousel } from 'react-responsive-carousel';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import dataAll from "../data.js"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Venue() {
     // get props
@@ -28,13 +30,18 @@ function Venue() {
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                       </svg>
-                      <p>Back</p>
+                      <div>Back</div>
                     </Link>
                 </div>
 
-                <div className='w-full h-[30rem] bg-red-100 rounded-md'>
-
-                </div>
+                <Carousel infiniteLoop={true}>
+                    <div>
+                        <div className='w-full h-[30rem] bg-red-100 rounded-md' style={{backgroundImage: "url(https://1.bp.blogspot.com/-m4JLMKtOiHM/X-_SIfmH0BI/AAAAAAAAJtg/L-FPuZoAvHghkJvZzz4NUP0Qp1Pd94iVACLcBGAsYHQ/s800/GOR-Gelanggang-Olahraga.jpg)"}}></div>
+                    </div>
+                    <div>
+                        <div className='w-full h-[30rem] bg-red-100 rounded-md' style={{backgroundImage: "url(https://1.bp.blogspot.com/-m4JLMKtOiHM/X-_SIfmH0BI/AAAAAAAAJtg/L-FPuZoAvHghkJvZzz4NUP0Qp1Pd94iVACLcBGAsYHQ/s800/GOR-Gelanggang-Olahraga.jpg)"}}></div>
+                    </div>
+                </Carousel>
 
                 <div className='space-x-2'>
                     { data.pembayaran.cash === true && data.pembayaran.transfer === false && data.pembayaran.qris === false &&
