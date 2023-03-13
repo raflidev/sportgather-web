@@ -1,16 +1,34 @@
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
-import dataAll from "../data.js"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import dataAll from "../data.js"
 
 function Venue() {
     // get props
     const { id } = useParams();
-    console.log(dataAll[id-1]);
     const [data, setData] = React.useState(dataAll[id-1]);
+
+    const otherdata = dataAll.filter((item) => {
+      return item.tipe.toLowerCase().includes(data.tipe.toLowerCase()) && item.no !== data.no;
+    }); 
+     
+    // pick random number 3 times and not same
+    const random = () => {
+      let arr = [];
+      for(let i = 0; i < 3; i++) {
+        let num = Math.floor(Math.random() * otherdata.length);
+        if(arr.includes(num)) {
+          i--;
+        } else {
+          arr.push(num);
+        }
+      }
+      return arr;
+    }
+  
+
 
     const rupiah = (x) => {
         return "Rp "+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -34,13 +52,23 @@ function Venue() {
                     </Link>
                 </div>
 
-                <Carousel infiniteLoop={true}>
-                    <div>
+                <Carousel infiniteLoop={true} showThumbs={false}>
+                  {
+                    data.images.map((item, index) => {
+                      return (
+                        <div key={index}>
+                            <div className='w-full h-[30rem] bg-red-100 rounded-md bg-cover bg-center' style={{backgroundImage: "url("+item+")"}}></div>
+                        </div>
+                      )
+                    }
+                    )
+                  }
+                    {/* <div>
                         <div className='w-full h-[30rem] bg-red-100 rounded-md' style={{backgroundImage: "url(https://1.bp.blogspot.com/-m4JLMKtOiHM/X-_SIfmH0BI/AAAAAAAAJtg/L-FPuZoAvHghkJvZzz4NUP0Qp1Pd94iVACLcBGAsYHQ/s800/GOR-Gelanggang-Olahraga.jpg)"}}></div>
                     </div>
                     <div>
                         <div className='w-full h-[30rem] bg-red-100 rounded-md' style={{backgroundImage: "url(https://1.bp.blogspot.com/-m4JLMKtOiHM/X-_SIfmH0BI/AAAAAAAAJtg/L-FPuZoAvHghkJvZzz4NUP0Qp1Pd94iVACLcBGAsYHQ/s800/GOR-Gelanggang-Olahraga.jpg)"}}></div>
-                    </div>
+                    </div> */}
                 </Carousel>
 
                 <div className='space-x-2'>
@@ -70,6 +98,7 @@ function Venue() {
                             <ul className='space-y-2 font-semibold text-gray-500'>
                                 <li>Siang : {rupiah(data.sewa.siang)}</li>
                                 <li>Malam : {rupiah(data.sewa.malam)}</li>
+                                <li>Keterangan : {data.sewa.keterangan}</li>
                             </ul>
                         </div>
                     </div>
@@ -80,8 +109,9 @@ function Venue() {
                     <div className='space-y-2'>
                         <div className='items-center space-x-2 text-lg pt-2'>
                             <ul className='space-y-2 font-semibold text-gray-500'>
-                                <li>Weekday : {rupiah(data.member_perbulan.weekday)}</li>
-                                <li>Weekend : {rupiah(data.member_perbulan.weekend)}</li>
+                                <li>Siang : {rupiah(data.member_perbulan.siang)}</li>
+                                <li>Malam : {rupiah(data.member_perbulan.malam)}</li>
+                                <li>Keterangan : {data.member_perbulan.keterangan}</li>
                             </ul>
                         </div>
                     </div>
@@ -103,21 +133,44 @@ function Venue() {
                 </div>
 
                 
-                <div>
+                <div className='space-y-4'>
                   <h1 className='text-3xl font-bold'>Lainnya</h1>
-                </div>
-                {/* <div className='fixed bottom-0 left-0 w-full'>
-                    <div className='flex justify-center'>
-                        <div className='w-1/2 bg-white py-5'>
-                            <div className='flex justify-between px-6 items-center'>
-                                <div className='text-3xl font-bold'>{rupiah(data.sewa.siang)}</div>
-                                <a href={`https://api.whatsapp.com/send?phone=${data.no_wa}&text=Halo, saya mau booking ${data.venue}`} target="_blank" rel="noreferrer"  className='py-3 px-8 bg-green-300 rounded-full'>
-                                    Chat Sekarang
-                                </a>
+
+                  <div className='grid grid-cols-3'>
+                    {
+                      random().map((item, index) => {
+                        return <a href={"/venue/"+otherdata[item].no} key={index} className="space-y-2 hover:-translate-y-1 rounded px-2 py-3 duration-300">
+                            <div className='w-full h-72 bg-red-100 rounded-md bg-center bg-cover' style={{ 
+                                backgroundImage: `url(${otherdata[item].images[0]})` 
+                            }}>
+
                             </div>
-                        </div>
-                    </div>
-                </div> */}
+                            <div className='space-x-2'>
+                                { otherdata[item].pembayaran.cash === true && otherdata[item].pembayaran.transfer === false && otherdata[item].pembayaran.qris === false &&
+                                    <p className='rounded bg-gray-200 inline p-1 text-sm'>Cash Only</p>
+                                }
+                                
+                                { otherdata[item].pembayaran.cash === true && (otherdata[item].pembayaran.transfer === true || otherdata[item].pembayaran.qris === true) &&
+                                    <p className='rounded bg-gray-200 inline p-1 text-sm'>Cash</p>
+                                }
+                                { otherdata[item].pembayaran.transfer === true &&
+                                    <p className='rounded bg-gray-200 inline p-1 text-sm'>Transfer</p>
+                                }
+                                { otherdata[item].pembayaran.qris === true &&
+                                    <p className='rounded bg-gray-200 inline p-1 text-sm'>Qris</p>
+                                }
+                            </div>
+                            <div className=''>
+                                <h1 className='text-xl font-semibold'>{otherdata[item].venue}</h1>
+                            </div>
+                            <div>
+                                <p className='text-gray-700'>{otherdata[item].alamat.slice(0,33)}...</p>
+                            </div>
+                        </a>
+                      })
+                    }
+                  </div>
+                </div>
             </div>
             
 

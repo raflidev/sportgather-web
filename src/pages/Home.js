@@ -10,10 +10,10 @@ function Home() {
     // filter data
     const handleFilter = (e) => {
         if(e.target.value === "All") return setData(dataAll);
+        setData(dataAll);
         const filter = e.target.value;
-        console.log(filter);
         const filteredData = data.filter((item) => {
-            return item.venue.toLowerCase().includes(filter.toLowerCase());
+            return item.tipe.toLowerCase().includes(filter.toLowerCase());
         });
         setData(filteredData);
     };
@@ -31,7 +31,6 @@ function Home() {
                         <option value="All">All</option>
                         <option value="Futsal">Futsal</option>
                         <option value="Bulu Tangkis">Bulu Tangkis</option>
-                        <option value="Basket">Basket</option>
                     </select>
                 </div>
             </div>
@@ -39,8 +38,8 @@ function Home() {
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10'>
                 { data.map((item, index) => {
                 return <Link to={"/venue/"+item.no} key={index} className="space-y-2 hover:-translate-y-1 rounded px-2 py-3 duration-300">
-                    <div className='w-full h-72 bg-red-100 rounded-md' style={{ 
-                        backgroundImage: `url("https://dispora.bengkuluutarakab.go.id/wp-content/uploads/2020/09/IMG_7617.jpg")` 
+                    <div className='w-full h-72 bg-green-200 rounded-md bg-center bg-cover' style={{ 
+                        backgroundImage: `url(${item.images[0]})` 
                     }}>
 
                     </div>
