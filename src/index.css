@@ -3,3 +3,58 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+.select-input {
+    border: 1px solid #A0AEC0;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #1A202C;
+    min-width: 140px;
+}
+
+.css-1dimb5e-singleValue {
+    color: #EDEEEE !important;
+}
+
+.css-13cymwt-control {
+    border: none !important;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #A0AEC0;
+    border-radius: 6px;
+    color: #1A202C;
+    background-color: transparent !important;
+    cursor: pointer !important;
+}
+
+.css-1jqq78o-placeholder {
+    font-size: 16px;
+    color: #A0AEC0 !important;
+}
+
+.css-t3ipsp-control {
+    background-color: transparent !important;
+    padding: 0 10px;
+    border: none !important;
+    outline: none ;
+    box-shadow: none !important;
+}
+
+.css-1nmdiq5-menu {
+    background-color: #1A202C !important;
+    color: #EDEEEE;
+    z-index: 2;
+}
+
+.select-input.cornix-at {
+    background-color: #1F2733;
+}
+
+.select-input.cornix-at .css-13cymwt-control {
+    padding: 6px 10px;
+}
+
+.select-input.cornix-at .css-t3ipsp-control  {
+    padding: 6px 10px;
+}

@@ -75,7 +75,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 2,
@@ -112,7 +112,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 3,
@@ -149,7 +149,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 4,
@@ -186,7 +186,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 5,
@@ -223,7 +223,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 6,
@@ -260,7 +260,7 @@ const data = [
      "lap_futsal": "-",
      "lainnya": "-"
    },
-   "tipe": "Bulu Tangkis"
+   "tipe": "badminton"
   },
   {
    "no": 7,

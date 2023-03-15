@@ -136,10 +136,10 @@ function Venue() {
                 <div className='space-y-4'>
                   <h1 className='text-3xl font-bold'>Lainnya</h1>
 
-                  <div className='grid grid-cols-3'>
+                  <div className='grid grid-cols-3 gap-4'>
                     {
                       random().map((item, index) => {
-                        return <a href={"/venue/"+otherdata[item].no} key={index} className="space-y-2 hover:-translate-y-1 rounded px-2 py-3 duration-300">
+                        return <a href={"/venue/"+otherdata[item].no} key={index} className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
                             <div className='w-full h-72 bg-red-100 rounded-md bg-center bg-cover' style={{ 
                                 backgroundImage: `url(${otherdata[item].images[0]})` 
                             }}>
