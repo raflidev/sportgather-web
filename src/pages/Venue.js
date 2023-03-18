@@ -37,8 +37,6 @@ function Venue() {
       }
       return arr;
     }
-  
-    console.log(random());
 
     const rupiah = (x) => {
         return "Rp "+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -49,7 +47,9 @@ function Venue() {
         <div className=" w-full lg:w-1/2 bg-white min-h-screen">
             <div className=''>
                 <div className='text-xl font-bold bg-primary-black px-10 py-4'>
-                    <img src={logo} alt="" srcSet="" />
+                    <Link to="/">
+                        <img src={logo} alt="" srcSet="" />
+                    </Link>
                 </div>
             </div>
             <div className='px-10 py-10'>
@@ -88,23 +88,33 @@ function Venue() {
                     </iframe>
                 </div>
                 
-                <div className='pt-5'>
+                <div className='pt-5 space-y-6 py-5'>
                     <h1 className='text-3xl font-bold'>Fasilitas</h1>
                     <div className='space-x-2 mt-3'>
                         {
                             data.fasilitas.musholla !== "-" &&
-                            <p className='rounded bg-gray-200 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Musholla</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Musholla</p>
                         }
                         {
                             data.fasilitas.kamar_mandi !== "-" &&
-                            <p className='rounded bg-gray-200 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Kamar mandi</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Kamar mandi</p>
                         }
                         {
                             data.fasilitas.lap_badminton !== "-" &&
-                            <p className='rounded bg-gray-200 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_badminton} Lapangan
-                            
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_badminton} Lapangan</p>
+                        }
+                        {
+                            data.fasilitas.lap_futsal !== "-" &&
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_futsal} Lapangan</p>
+                        }
+                        {
+                            data.fasilitas.lap_basket !== "-" &&
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_basket} Lapangan. 
+                            {
+                                data.fasilitas.tipe !== "-" &&
+                                <span className='text-black font-semibold'> Tipe ({data.fasilitas.tipe})</span>
+                            }
                             </p>
-
                         }
                     </div>
                 </div>
@@ -112,16 +122,12 @@ function Venue() {
                 <div className='pt-5'>
                     <h1 className='text-3xl font-bold'>Harga</h1>
                     <div className='space-y-2'>
-                        <div className='items-center text-lg pt-2 space-y-4'>
+                        <div className='flex justify-between items-center text-lg pt-2 space-y-4'>
                             <div>
                                 <h2 className='text-xl font-bold'>Sewa</h2>
                                 <ul className='space-y-1 font-semibold text-gray-500'>
                                     <li>Siang : {rupiah(data.sewa.siang)}/jam</li>
                                     <li>Malam : {rupiah(data.sewa.malam)}/jam</li>
-                                    {
-                                        data.sewa.keterangan !== "-" &&
-                                        <li>Keterangan : {data.sewa.keterangan}</li>
-                                    }
                                 </ul>
                             </div>
                             <div>
@@ -139,10 +145,7 @@ function Venue() {
                                                 data.member_perbulan.malam !== "-" &&
                                                 <li>Malam : {rupiah(data.member_perbulan.malam)}/bulan</li>
                                             }
-                                            {
-                                                data.member_perbulan.keterangan !== "-" &&
-                                                <li>Keterangan : {data.member_perbulan.keterangan}</li>
-                                            }
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -152,30 +155,32 @@ function Venue() {
                     </div>
                 </div>
 
-                <div className='bg-gray-200 px-4 py-6 rounded-xl my-4'>
+                <div className='bg-gray-100 px-4 py-6 rounded-xl my-4 border border-gray-200'>
                     <div className='flex items-center justify-between'>
                         <div className='space-y-5'>
-                            <h2 className='font-bold'>Pembayaran</h2>
+                            <h2 className='font-bold text-xl'>Pembayaran</h2>
                             <div className='space-x-2'>
                                 { data.pembayaran.cash === true && data.pembayaran.transfer === false && data.pembayaran.qris === false &&
-                                    <p className='rounded bg-primary-black text-white font-bold  inline py-2 px-4'>Cash Only</p>
+                                    <p className='rounded bg-primary-black text-white font-bold text-sm inline py-2 px-3'>Cash Only</p>
                                 }
                                 
                                 { data.pembayaran.cash === true && (data.pembayaran.transfer === true || data.pembayaran.qris === true) &&
-                                    <p className='rounded bg-primary-black text-white font-bold  inline py-2 px-4'>Cash</p>
+                                    <p className='rounded bg-primary-black text-white font-bold text-sm inline py-2 px-3'>Cash</p>
                                 }
                                 { data.pembayaran.transfer === true &&
-                                    <p className='rounded bg-primary-black text-white font-bold  inline py-2 px-4'>Transfer</p>
+                                    <p className='rounded bg-primary-black text-white font-bold text-sm inline py-2 px-3'>Transfer</p>
                                 }
                                 { data.pembayaran.qris === true &&
-                                    <p className='rounded bg-primary-black text-white font-bold  inline py-2 px-4'>Qris</p>
+                                    <p className='rounded bg-primary-black text-white font-bold text-sm inline py-2 px-3'>Qris</p>
                                 }
                             </div>
                         </div>
 
-                        <div className='space-y-5'>
-                            <h2 className='font-bold'>Status</h2>
-                            <div className='font-bold text-gray-500'>booking via (
+                        <div className=''>
+                            <h2 className='font-bold text-xl'>Keterangan</h2>
+                            <ol className='text-gray-500 list-disc text-sm pl-5'>
+                                <li>
+                                booking via (
                                 {
                                     data.booking.onsite && data.booking.wa === false &&
                                     <span>
@@ -194,8 +199,20 @@ function Venue() {
                                         onsite / wa
                                     </span>
                                 }
-                            )
-                            </div>
+                                )
+                                </li>
+
+                                {
+                                    data.member_perbulan.keterangan !== "-" &&
+                                    <li>{data.member_perbulan.keterangan}</li>
+                                }
+                            
+                                {
+                                    data.sewa.keterangan !== "-" &&
+                                    <li>{data.sewa.keterangan}</li>
+                                }
+                                
+                            </ol>
                         </div>
                     </div>
                 </div>

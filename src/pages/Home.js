@@ -29,7 +29,9 @@ function Home() {
       <div className="flex justify-center">
         <div className=" w-full lg:w-1/2 bg-white min-h-screen">
             <div className='text-xl font-bold bg-primary-black px-10 py-4'>
-                <img src={logo} alt="" srcSet="" />
+                <Link to="/">
+                    <img src={logo} alt="" srcSet="" />
+                </Link>
             </div>
             <div className='px-10 py-10'>
                 <div className=''>         
