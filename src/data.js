@@ -37,6 +37,18 @@ import zero1 from "./assets/images/Zero Futsal/foto1.jpg"
 import zero2 from "./assets/images/Zero Futsal/foto2.jpg"
 import zero3 from "./assets/images/Zero Futsal/foto3.jpg"
 
+import gallery1 from "./assets/images/Futsal D'Gallery/foto1.jpg"
+import gallery2 from "./assets/images/Futsal D'Gallery/foto2.jpg"
+import gallery3 from "./assets/images/Futsal D'Gallery/foto3.JPG"
+
+import beebucks1 from "./assets/images/Beebucks Basketball Arena/foto1.jpg"
+import beebucks2 from "./assets/images/Beebucks Basketball Arena/foto2.jpg"
+import beebucks3 from "./assets/images/Beebucks Basketball Arena/foto3.jpg"
+
+import homebasket1 from "./assets/images/Home Ground Basketball/foto1.jpg"
+import homebasket2 from "./assets/images/Home Ground Basketball/foto2.jpg"
+import homebasket3 from "./assets/images/Home Ground Basketball/foto3.jpeg"
+
 import imagedefault from "./assets/images/default.jpg"
 
 const data = [
@@ -45,7 +57,7 @@ const data = [
    "venue": "GOR Sentosa",
    "alamat": "Jl. Sukabirus No.A2, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/aZMK7mrv5R131Bdv7",
-   "no_wa": "08971584123",
+   "no_wa": "+62971584123",
    "images": [sentosa1, sentosa2, sentosa3, sentosa4],
    "booking": {
      "onsite": true,
@@ -86,7 +98,7 @@ const data = [
    "venue": "GOR Sigma",
    "alamat": "Jl. Cijeruk No.4, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/BHrcwjgJQ5mTYysE8",
-   "no_wa": "081322854802",
+   "no_wa": "+621322854802",
    "images": [sigma1, sigma2, sigma3],
    "booking": {
      "onsite": true,
@@ -101,14 +113,14 @@ const data = [
    },
    "scheduling": "manual",
    "sewa":{
-     "siang": "-",
-     "malam": "-",
+     "siang": "50000",
+     "malam": "50000",
      "keterangan": "-",
    },
    "member_perbulan":{
      "siang": 250000,
      "malam": 275000,
-     "keterangan": "4x main@3jam",
+     "keterangan": "membership 4x main/bulan",
    },
    "jam_buka": "7.00 - 22.00",
    "fasilitas":{
@@ -127,7 +139,7 @@ const data = [
    "venue": "GOR MSB",
    "alamat": "Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40267",
    "gmaps": "https://goo.gl/maps/6e2empALCf4yFzjbA",
-   "no_wa": "081320455444",
+   "no_wa": "+621320455444",
    "images": [msb1, msb2, msb3],
    "booking": {
      "onsite": true,
@@ -149,7 +161,7 @@ const data = [
    "member_perbulan":{
      "siang": 320000,
      "malam": 320000,
-     "keterangan": "4x main@3jam",
+     "keterangan": "membership 4x main/bulan",
    },
    "jam_buka": "8.00 - 22.00",
    "fasilitas":{
@@ -168,7 +180,7 @@ const data = [
    "venue": "GOR BBR (Buah Batu Regency)",
    "alamat": "Komplek Buah Batu Regency, Jl. Terusan Buah Batu No.7A, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287",
    "gmaps": "https://goo.gl/maps/AYD98QRx9AWLtsJz8",
-   "no_wa": "087736489112",
+   "no_wa": "+627736489112",
    "images": [bbr1, bbr2, bbr3],
    "booking": {
      "onsite": true,
@@ -190,7 +202,7 @@ const data = [
    "member_perbulan":{
      "siang": 300000,
      "malam": 300000,
-     "keterangan": "4x main@3jam",
+     "keterangan": "membership 4x main/bulan",
    },
    "jam_buka": "7.00 - 17.00",
    "fasilitas":{
@@ -209,7 +221,7 @@ const data = [
    "venue": "GOR Wartawan",
    "alamat": "Jl. Wartawan 2 No.23, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
    "gmaps": "https://goo.gl/maps/ahbgQJA5msFmemJR7",
-   "no_wa": "0895333633777",
+   "no_wa": "+6295333633777",
    "images": [wartawan1, wartawan2],
    "booking": {
      "onsite": false,
@@ -231,7 +243,7 @@ const data = [
    "member_perbulan":{
      "siang": 390000,
      "malam": 390000,
-     "keterangan": "4x main@3jam + (1 slop kok)",
+     "keterangan": "membership 4x main/bulan + (1 slop kok)",
    },
    "jam_buka": "7.00 - 23.00",
    "fasilitas":{
@@ -250,7 +262,7 @@ const data = [
    "venue": "GOR Cifut",
    "alamat": "Jl. Cikoneng, RT.03/RW.08, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/HvMi4NUzPHA8Jndk8",
-   "no_wa": "083138466956",
+   "no_wa": "+623138466956",
    "images": [cifut1, cifut2, cifut3],
    "booking": {
      "onsite": true,
@@ -272,7 +284,7 @@ const data = [
    "member_perbulan":{
      "siang": 150000,
      "malam": 150000,
-     "keterangan": "4x main@3jam",
+     "keterangan": "membership 4x main/bulan",
    },
    "jam_buka": "8.00 - 00.00",
    "fasilitas":{
@@ -291,7 +303,7 @@ const data = [
    "venue": "Futsal IFI",
    "alamat": "Jl. Sukabirus No.7, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/oAkXc1CNK5uNfEer7",
-   "no_wa": "089637510539",
+   "no_wa": "+629637510539",
    "images": [ifi1, ifi2, ifi3],
    "booking": {
      "onsite": true,
@@ -347,8 +359,8 @@ const data = [
    },
    "scheduling": "manual",
    "sewa":{
-     "siang": "-",
-     "malam": "-",
+     "siang": 120000,
+     "malam": 135000,
      "keterangan": "-",
    },
    "member_perbulan":{
@@ -373,7 +385,7 @@ const data = [
    "venue": "Futsal Bisoc",
    "alamat": "Jl. Batununggal Lestari No.1, Batununggal, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40266",
    "gmaps": "https://goo.gl/maps/6WDiUdMkmTPK2KL19",
-   "no_wa": "089530619149",
+   "no_wa": "+629530619149",
    "images": [bisoc1, bisoc2, bisoc3],
    "booking": {
      "onsite": true,
@@ -395,7 +407,7 @@ const data = [
    "member_perbulan":{
      "siang": 486000,
      "malam": 540000,
-     "keterangan": "4x main (reschedulue jadwal member minimal 1 hari sebelumnya)",
+     "keterangan": "4x main (reschedule jadwal member minimal 1 hari sebelumnya)",
    },
    "jam_buka": "8.00 - 00.00",
    "fasilitas":{
@@ -414,7 +426,7 @@ const data = [
    "venue": "Zero Futsal",
    "alamat": "Jl. Terusan Rancagoong No.13, Gumuruh, Kec. Batununggal, Kota Bandung, Jawa Barat 40275",
    "gmaps": "https://goo.gl/maps/uFbtCidwnMukfRk28",
-   "no_wa": "08112292376",
+   "no_wa": "+62112292376",
    "images": [zero1, zero2, zero3],
    "booking": {
      "onsite": true,
@@ -436,7 +448,7 @@ const data = [
    "member_perbulan":{
      "siang": 400000,
      "malam": 480000,
-     "keterangan": "4x main (reschedulue jadwal member minimal 1 hari sebelumnya)",
+     "keterangan": "4x main (reschedule jadwal member minimal 1 hari sebelumnya)",
    },
    "jam_buka": "8.00 - 00.00",
    "fasilitas":{
@@ -455,7 +467,7 @@ const data = [
    "venue": "Futsal Cifut",
    "alamat": "Jl. Cikoneng, RT.03/RW.08, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/HvMi4NUzPHA8Jndk8",
-   "no_wa": "083138466956",
+   "no_wa": "+623138466956",
    "images": [imagedefault],
    "booking": {
      "onsite": true,
@@ -496,8 +508,8 @@ const data = [
    "venue": "Futsal D'gallery",
    "alamat": "No. 88/45F Dayeuhkolot, Jl. Sukabirus, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/kqf7isudVbwnUfMM6",
-   "no_wa": "081310308164",
-   "images": [imagedefault],
+   "no_wa": "+621310308164",
+   "images": [gallery1, gallery2, gallery3],
    "booking": {
      "onsite": true,
      "wa": true,
@@ -537,8 +549,8 @@ const data = [
    "venue": "Beebucks Basketball Arena",
    "alamat": "Jl. Halimun No.36, Malabar, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
    "gmaps": "https://g.co/kgs/pWr2z9",
-   "no_wa": "081322234664",
-   "images": [imagedefault],
+   "no_wa": "+621322234664",
+   "images": [beebucks1, beebucks2, beebucks3],
    "booking": {
      "onsite": true,
      "wa": true,
@@ -578,8 +590,8 @@ const data = [
    "venue": "Home Ground Basketball",
    "alamat": "Jl. Terusan Pasirkoja No.12, Cibadak, Kec. Astanaanyar, Kota Bandung, Jawa Barat 40241",
    "gmaps": "https://goo.gl/maps/K5uGfYuEo8H9wfNV6",
-   "no_wa": "081532842077",
-   "images": [imagedefault],
+   "no_wa": "+621532842077",
+   "images": [homebasket1, homebasket2, homebasket3],
    "booking": {
      "onsite": true,
      "wa": true,

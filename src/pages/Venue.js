@@ -59,7 +59,7 @@ function Venue() {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                         </svg>
-                        <div className='font-bold text-2xl'>Detail Lapangan</div>
+                        <div className='font-bold text-2xl'>Back</div>
                         </Link>
                     </div>
 
@@ -156,8 +156,8 @@ function Venue() {
                 </div>
 
                 <div className='bg-gray-100 px-4 py-6 rounded-xl my-4 border border-gray-200'>
-                    <div className='flex items-center justify-between'>
-                        <div className='space-y-5'>
+                    <div className='flex items-start justify-between'>
+                        <div className='w-7/12 space-y-5'>
                             <h2 className='font-bold text-xl'>Pembayaran</h2>
                             <div className='space-x-2'>
                                 { data.pembayaran.cash === true && data.pembayaran.transfer === false && data.pembayaran.qris === false &&
@@ -176,7 +176,7 @@ function Venue() {
                             </div>
                         </div>
 
-                        <div className=''>
+                        <div className='w-5/12'>
                             <h2 className='font-bold text-xl'>Keterangan</h2>
                             <ol className='text-gray-500 list-disc text-sm pl-5'>
                                 <li>
