@@ -73,6 +73,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 1,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -110,6 +114,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 3,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": 1,
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -147,6 +155,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 2,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -184,6 +196,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 2,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": 1,
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -221,6 +237,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 3,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -258,6 +278,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": 1,
      "lap_futsal": "-",
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "badminton"
@@ -295,6 +319,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": "-",
      "lap_futsal": 2,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "futsal"
@@ -332,6 +360,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": "-",
      "lap_futsal": 3,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": 1,
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "futsal"
@@ -369,6 +401,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": "-",
      "lap_futsal": 2,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "sewa sepatu 10k"
    },
    "tipe": "futsal"
@@ -406,6 +442,10 @@ const data = [
    "fasilitas":{
      "lap_badminton": "-",
      "lap_futsal": 1,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "futsal"
@@ -443,10 +483,137 @@ const data = [
    "fasilitas":{
      "lap_badminton": "-",
      "lap_futsal": 1,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
      "lainnya": "-"
    },
    "tipe": "futsal"
-  }
+  },
+  {
+   "no": 12,
+   "venue": "Futsal D'gallery",
+   "alamat": "No. 88/45F Dayeuhkolot, Jl. Sukabirus, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
+   "gmaps": "https://goo.gl/maps/kqf7isudVbwnUfMM6",
+   "no_wa": "081310308164",
+   "images": [imagedefault],
+   "booking": {
+     "onsite": true,
+     "wa": true,
+    },
+   "wajib_dp": false,
+   "keterangan": "-",
+   "pembayaran":{
+   "cash": true,
+   "transfer": false,
+   "qris": false,
+   },
+   "scheduling": "manual",
+   "sewa":{
+     "siang": 110000,
+     "malam": 120000,
+     "keterangan": "-",
+   },
+   "member_perbulan":{
+     "siang": "-",
+     "malam": "-",
+     "keterangan": "-",
+   },
+   "jam_buka": "8.00 - 00.00",
+   "fasilitas":{
+     "lap_badminton": "-",
+     "lap_futsal": 1,
+     "lap_basket": "-",
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "-",
+     "lainnya": "-"
+   },
+   "tipe": "futsal"
+  },
+  {
+   "no": 13,
+   "venue": "Beebucks Basketball Arena",
+   "alamat": "Jl. Halimun No.36, Malabar, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
+   "gmaps": "https://g.co/kgs/pWr2z9",
+   "no_wa": "081322234664",
+   "images": [imagedefault],
+   "booking": {
+     "onsite": true,
+     "wa": true,
+    },
+   "wajib_dp": true,
+   "keterangan": "minimal 50%",
+   "pembayaran":{
+   "cash": true,
+   "transfer": true,
+   "qris": false,
+   },
+   "scheduling": "manual",
+   "sewa":{
+     "siang": 240000,
+     "malam": 240000,
+     "keterangan": "-",
+   },
+   "member_perbulan":{
+     "siang": 1700000,
+     "malam": 1700000,
+     "keterangan": "4-5x Main (tergantung jumlah minggu dalam sebulan)",
+   },
+   "jam_buka": "7.00 - 22.00",
+   "fasilitas":{
+     "lap_badminton": "-",
+     "lap_futsal": "-",
+     "lap_basket": 1,
+     "kamar_mandi": 1,
+     "musholla": 1,
+     "tipe": "5x5",
+     "lainnya": "-"
+   },
+   "tipe": "basket"
+  },
+  {
+   "no": 14,
+   "venue": "Home Ground Basketball",
+   "alamat": "Jl. Terusan Pasirkoja No.12, Cibadak, Kec. Astanaanyar, Kota Bandung, Jawa Barat 40241",
+   "gmaps": "https://goo.gl/maps/K5uGfYuEo8H9wfNV6",
+   "no_wa": "081532842077",
+   "images": [imagedefault],
+   "booking": {
+     "onsite": true,
+     "wa": true,
+    },
+   "wajib_dp": true,
+   "keterangan": "-",
+   "pembayaran":{
+   "cash": true,
+   "transfer": true,
+   "qris": false,
+   },
+   "scheduling": "manual",
+   "sewa":{
+     "siang": "-",
+     "malam": "-",
+     "keterangan": "-",
+   },
+   "member_perbulan":{
+     "siang": "-",
+     "malam": "-",
+     "keterangan": "-",
+   },
+   "jam_buka": "8.00 - 22.00",
+   "fasilitas":{
+     "lap_badminton": "-",
+     "lap_futsal": "-",
+     "lap_basket": 1,
+     "kamar_mandi": 1,
+     "musholla": "-",
+     "tipe": "3x3",
+     "lainnya": "-"
+   },
+   "tipe": "basket"
+  },
  ]
 
 export default data;
