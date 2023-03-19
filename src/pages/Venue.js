@@ -1,8 +1,9 @@
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel';
 import { useParams, Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import dataAll from "../data.js"
 import Footer from '../components/Footer';
 
@@ -41,6 +42,14 @@ function Venue() {
     const rupiah = (x) => {
         return "Rp "+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
   return (
     <div className='bg-gray-300 min-h-screen font-inter'>
       <div className="flex justify-center">
@@ -62,19 +71,19 @@ function Venue() {
                         <div className='font-bold text-2xl'>Back</div>
                         </Link>
                     </div>
-
-                    <Carousel infiniteLoop={true} showThumbs={false}>
+                    
+                    <Slider {...settings}>
                     {
                         data.images.map((item, index) => {
                         return (
                             <div key={index}>
-                                <div className='w-full h-[30rem] bg-red-100 rounded-md bg-cover bg-center' style={{backgroundImage: "url("+item+")"}}></div>
+                                <div className='w-full h-[30rem] bg-green-300 rounded-md bg-cover bg-center' style={{backgroundImage: "url("+item+")"}}></div>
                             </div>
                         )
                         }
                         )
                     }
-                    </Carousel>
+                    </Slider>
 
                     <div className='space-y-2'>
                         <h1 className='text-3xl font-bold'>{data.venue}</h1>
@@ -90,26 +99,26 @@ function Venue() {
                 
                 <div className='pt-5 space-y-6 py-5'>
                     <h1 className='text-3xl font-bold'>Fasilitas</h1>
-                    <div className='space-x-2 mt-3'>
+                    <div className='grid grid-cols-2 md:grid-cols-3  xl:grid-cols-5 gap-3 mt-3'>
                         {
                             data.fasilitas.musholla !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Musholla</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>Musholla</p>
                         }
                         {
                             data.fasilitas.kamar_mandi !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>Kamar mandi</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>Kamar mandi</p>
                         }
                         {
                             data.fasilitas.lap_badminton !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_badminton} Lapangan</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_badminton} Lapangan</p>
                         }
                         {
                             data.fasilitas.lap_futsal !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_futsal} Lapangan</p>
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_futsal} Lapangan</p>
                         }
                         {
                             data.fasilitas.lap_basket !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-1 text-sm py-3 px-5'>{data.fasilitas.lap_basket} Lapangan. 
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_basket} Lapangan. 
                             {
                                 data.fasilitas.tipe !== "-" &&
                                 <span className='text-black font-semibold'> Tipe ({data.fasilitas.tipe})</span>
@@ -119,10 +128,10 @@ function Venue() {
                     </div>
                 </div>
 
-                <div className='pt-5'>
+                <div className='py-5'>
                     <h1 className='text-3xl font-bold'>Harga</h1>
-                    <div className='space-y-2'>
-                        <div className='flex justify-between items-center text-lg pt-2 space-y-4'>
+                    <div className=''>
+                        <div className='flex justify-between flex-col md:flex-row items-start md:items-center text-lg pt-2 space-y-4 md:space-y-0'>
                             <div>
                                 <h2 className='text-xl font-bold'>Sewa</h2>
                                 <ul className='space-y-1 font-semibold text-gray-500'>
@@ -156,8 +165,8 @@ function Venue() {
                 </div>
 
                 <div className='bg-gray-100 px-4 py-6 rounded-xl my-4 border border-gray-200'>
-                    <div className='flex items-start justify-between'>
-                        <div className='w-7/12 space-y-5'>
+                    <div className='flex flex-col md:flex-row items-start justify-between space-y-4 md:space-y-0'>
+                        <div className='w-full md:w-7/12 space-y-5'>
                             <h2 className='font-bold text-xl'>Pembayaran</h2>
                             <div className='space-x-2'>
                                 { data.pembayaran.cash === true && data.pembayaran.transfer === false && data.pembayaran.qris === false &&
@@ -176,7 +185,7 @@ function Venue() {
                             </div>
                         </div>
 
-                        <div className='w-5/12'>
+                        <div className='w-full md:w-5/12'>
                             <h2 className='font-bold text-xl'>Keterangan</h2>
                             <ol className='text-gray-500 list-disc text-sm pl-5'>
                                 <li>
@@ -227,37 +236,39 @@ function Venue() {
                     <div className='space-y-4'>
                     <h1 className='text-3xl font-bold'>Lainnya</h1>
 
-                    <div className='grid grid-cols-3 gap-4'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
                         {
                         random().map((item, index) => {
-                            return <a href={"/venue/"+otherdata[item].no} key={index} className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
-                                <div className='w-full h-56 bg-red-100 rounded-md bg-center bg-cover' style={{ 
-                                    backgroundImage: `url(${otherdata[item].images[0]})` 
-                                }}>
+                            return <div key={index}>
+                                <a href={"/venue/"+otherdata[item].no} className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
+                                    <div className='w-full h-56 bg-red-100 rounded-md bg-center bg-cover' style={{ 
+                                        backgroundImage: `url(${otherdata[item].images[0]})` 
+                                    }}>
 
-                                </div>
-                                <div className='space-x-2'>
-                                    { otherdata[item].pembayaran.cash === true && otherdata[item].pembayaran.transfer === false && otherdata[item].pembayaran.qris === false &&
-                                        <p className='rounded bg-primary-black text-white font-semibold  inline p-1 text-sm'>Cash Only</p>
-                                    }
-                                    
-                                    { otherdata[item].pembayaran.cash === true && (otherdata[item].pembayaran.transfer === true || otherdata[item].pembayaran.qris === true) &&
-                                        <p className='rounded bg-primary-black text-white font-semibold  inline p-1 text-sm'>Cash</p>
-                                    }
-                                    { otherdata[item].pembayaran.transfer === true &&
-                                        <p className='rounded bg-primary-black text-white font-semibold  inline p-1 text-sm'>Transfer</p>
-                                    }
-                                    { otherdata[item].pembayaran.qris === true &&
-                                        <p className='rounded bg-primary-black text-white font-semibold  inline p-1 text-sm'>Qris</p>
-                                    }
-                                </div>
-                                <div className=''>
-                                    <h1 className='text-xl font-semibold'>{otherdata[item].venue}</h1>
-                                </div>
-                                <div>
-                                    <p className='text-gray-700'>{otherdata[item].alamat.slice(0,33)}...</p>
-                                </div>
-                            </a>
+                                    </div>
+                                    <div className='space-x-3 py-2'>
+                                        { otherdata[item].pembayaran.cash === true && otherdata[item].pembayaran.transfer === false && otherdata[item].pembayaran.qris === false &&
+                                            <p className='rounded bg-primary-black text-white font-semibold  inline p-2 md:p-1 text-sm'>Cash Only</p>
+                                        }
+                                        
+                                        { otherdata[item].pembayaran.cash === true && (otherdata[item].pembayaran.transfer === true || otherdata[item].pembayaran.qris === true) &&
+                                            <p className='rounded bg-primary-black text-white font-semibold  inline p-2 md:p-1 text-sm'>Cash</p>
+                                        }
+                                        { otherdata[item].pembayaran.transfer === true &&
+                                            <p className='rounded bg-primary-black text-white font-semibold  inline p-2 md:p-1 text-sm'>Transfer</p>
+                                        }
+                                        { otherdata[item].pembayaran.qris === true &&
+                                            <p className='rounded bg-primary-black text-white font-semibold  inline p-2 md:p-1 text-sm'>Qris</p>
+                                        }
+                                    </div>
+                                    <div className=''>
+                                        <h1 className='text-xl font-semibold'>{otherdata[item].venue}</h1>
+                                    </div>
+                                    <div>
+                                        <p className='text-gray-700'>{otherdata[item].alamat.slice(0,33)}...</p>
+                                    </div>
+                                </a>
+                            </div>
                         })
                         }
                     </div>
