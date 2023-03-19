@@ -62,7 +62,7 @@ function Home() {
                 <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10'>
                     { filteredData.map((item, index) => {
                     return <div key={index} >
-                        <Link to={"/venue/"+item.no}className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
+                        <Link to={"/venue/"+item.slug}className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
                             <div className='w-full h-64 2xl:h-72 bg-green-200 rounded-md bg-center bg-cover' style={{ 
                                 backgroundImage: `url(${item.images[0]})` 
                             }}>

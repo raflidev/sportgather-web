@@ -55,6 +55,7 @@ const data = [
   {
    "no": 1,
    "venue": "GOR Sentosa",
+   "slug": "gor-sentosa",
    "alamat": "Jl. Sukabirus No.A2, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/aZMK7mrv5R131Bdv7",
    "no_wa": "+628971584123",
@@ -96,6 +97,7 @@ const data = [
   {
    "no": 2,
    "venue": "GOR Sigma",
+    "slug": "gor-sigma",
    "alamat": "Jl. Cijeruk No.4, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/BHrcwjgJQ5mTYysE8",
    "no_wa": "+6281322854802",
@@ -137,6 +139,7 @@ const data = [
   {
    "no": 3,
    "venue": "GOR MSB",
+    "slug": "gor-msb",
    "alamat": "Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40267",
    "gmaps": "https://goo.gl/maps/6e2empALCf4yFzjbA",
    "no_wa": "+6281320455444",
@@ -178,6 +181,7 @@ const data = [
   {
    "no": 4,
    "venue": "GOR BBR (Buah Batu Regency)",
+    "slug": "gor-bbr",
    "alamat": "Komplek Buah Batu Regency, Jl. Terusan Buah Batu No.7A, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287",
    "gmaps": "https://goo.gl/maps/AYD98QRx9AWLtsJz8",
    "no_wa": "+6287736489112",
@@ -219,6 +223,7 @@ const data = [
   {
    "no": 5,
    "venue": "GOR Wartawan",
+    "slug": "gor-wartawan",
    "alamat": "Jl. Wartawan 2 No.23, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
    "gmaps": "https://goo.gl/maps/ahbgQJA5msFmemJR7",
    "no_wa": "+62895333633777",
@@ -260,6 +265,7 @@ const data = [
   {
    "no": 6,
    "venue": "GOR Cifut",
+    "slug": "gor-cifut",
    "alamat": "Jl. Cikoneng, RT.03/RW.08, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/HvMi4NUzPHA8Jndk8",
    "no_wa": "+6283138466956",
@@ -301,6 +307,7 @@ const data = [
   {
    "no": 7,
    "venue": "Futsal IFI",
+    "slug": "futsal-ifi",
    "alamat": "Jl. Sukabirus No.7, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/oAkXc1CNK5uNfEer7",
    "no_wa": "+6289637510539",
@@ -342,6 +349,7 @@ const data = [
   {
    "no": 8,
    "venue": "Futsal Rajawali",
+    "slug": "futsal-rajawali",
    "alamat": "Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/vpSUfADYEkWhwEL56",
    "no_wa": "tidak pakai wa",
@@ -383,6 +391,7 @@ const data = [
   {
    "no": 9,
    "venue": "Futsal Bisoc",
+    "slug": "futsal-bisoc",
    "alamat": "Jl. Batununggal Lestari No.1, Batununggal, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40266",
    "gmaps": "https://goo.gl/maps/6WDiUdMkmTPK2KL19",
    "no_wa": "+6289530619149",
@@ -424,6 +433,7 @@ const data = [
   {
    "no": 10,
    "venue": "Zero Futsal",
+    "slug": "zero-futsal",
    "alamat": "Jl. Terusan Rancagoong No.13, Gumuruh, Kec. Batununggal, Kota Bandung, Jawa Barat 40275",
    "gmaps": "https://goo.gl/maps/uFbtCidwnMukfRk28",
    "no_wa": "+628112292376",
@@ -465,6 +475,7 @@ const data = [
   {
    "no": 11,
    "venue": "Futsal Cifut",
+    "slug": "futsal-cifut",
    "alamat": "Jl. Cikoneng, RT.03/RW.08, Bojongsoang, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat 40288",
    "gmaps": "https://goo.gl/maps/HvMi4NUzPHA8Jndk8",
    "no_wa": "+6283138466956",
@@ -506,6 +517,7 @@ const data = [
   {
    "no": 12,
    "venue": "Futsal D'gallery",
+    "slug": "futsal-d-gallery",
    "alamat": "No. 88/45F Dayeuhkolot, Jl. Sukabirus, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
    "gmaps": "https://goo.gl/maps/kqf7isudVbwnUfMM6",
    "no_wa": "+6281310308164",
@@ -547,6 +559,7 @@ const data = [
   {
    "no": 13,
    "venue": "Beebucks Basketball Arena",
+    "slug": "beebucks-basketball-arena",
    "alamat": "Jl. Halimun No.36, Malabar, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
    "gmaps": "https://g.co/kgs/pWr2z9",
    "no_wa": "+6281322234664",
@@ -588,6 +601,7 @@ const data = [
   {
    "no": 14,
    "venue": "Home Ground Basketball",
+    "slug": "home-ground-basketball",
    "alamat": "Jl. Terusan Pasirkoja No.12, Cibadak, Kec. Astanaanyar, Kota Bandung, Jawa Barat 40241",
    "gmaps": "https://goo.gl/maps/K5uGfYuEo8H9wfNV6",
    "no_wa": "+6281532842077",

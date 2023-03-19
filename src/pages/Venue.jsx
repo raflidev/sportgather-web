@@ -8,9 +8,15 @@ import dataAll from "../data.js"
 import Footer from '../components/Footer';
 
 function Venue() {
-    // get props
-    const { id } = useParams();
-    const [data, setData] = React.useState(dataAll[id-1]);
+    // get slug from url
+    const { slug } = useParams();
+    // get data from slug
+    const dataSlug = dataAll.filter((item) => {
+        return item.slug === slug;
+    })[0];
+
+    const [data, setData] = React.useState(dataSlug);
+    console.log(data);
 
     const otherdata = dataAll.filter((item) => {
       return item.tipe.toLowerCase().includes(data.tipe.toLowerCase()) && item.no !== data.no;
@@ -241,7 +247,7 @@ function Venue() {
                         {
                         random().map((item, index) => {
                             return <div key={index}>
-                                <a href={"/venue/"+otherdata[item].no} className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
+                                <a href={"/venue/"+otherdata[item].slug} className="space-y-2 hover:-translate-y-1 rounded py-3 duration-300">
                                     <div className='w-full h-56 bg-red-100 rounded-md bg-center bg-cover' style={{ 
                                         backgroundImage: `url(${otherdata[item].images[0]})` 
                                     }}>

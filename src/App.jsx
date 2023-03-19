@@ -26,7 +26,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/venue/:id" element={<Venue />} />
+        <Route path="/venue/:slug" element={<Venue />} />
       </Routes>
     </BrowserRouter>
   );
