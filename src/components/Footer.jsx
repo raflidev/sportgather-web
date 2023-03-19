@@ -18,7 +18,7 @@ function Footer() {
                     <SocialIcon network='instagram' bgColor="#131313" className='z-0' fgColor='#fff' style={{ height: 40, width: 40 }}/>
                     <div className='font-semibold z-10 text-md md:text-xs'>Sportgatherid</div>
                 </a>
-                <a href='wa.me/6281287475131' target="_blank" rel="noreferrer" className='flex -space-x-1 items-center hover:underline'>
+                <a href='https://wa.me/6281287475131' target="_blank" rel="noreferrer" className='flex -space-x-1 items-center hover:underline'>
                     <SocialIcon network='whatsapp' bgColor="#131313" className='z-0' fgColor='#fff' style={{ height: 40, width: 40 }}/>
                     <div className='font-semibold z-10 text-md md:text-xs'>0812-8747-5131</div>
                 </a>
