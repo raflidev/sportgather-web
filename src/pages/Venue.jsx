@@ -43,13 +43,14 @@ function Venue() {
         return "Rp "+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+    const settings = {
+      dots: true,
+      infinite: true,
+      arrows: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
   return (
     <div className='bg-gray-300 min-h-screen font-inter'>
       <div className="flex justify-center">
@@ -121,7 +122,7 @@ function Venue() {
                             <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_basket} Lapangan 
                             {
                                 data.fasilitas.tipe !== "-" &&
-                                <span className='text-black font-semibold'> {data.fasilitas.tipe}</span>
+                                <span className='text-black font-semibold'> ({data.fasilitas.tipe}) </span>
                             }
                             </p>
                         }
