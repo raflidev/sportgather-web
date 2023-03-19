@@ -9,7 +9,7 @@ function Footer() {
                 <img src={logo} className="w-auto md:w-20" alt=""  />
             </div>
             <div className='text-md md:text-xs text-center'>
-                Copyright &copy; {new Date().getFullYear()} Sportgather
+                Copyright &copy;{new Date().getFullYear()} Sportgather
             </div>
             <a href='https://instagram.com/sportgatherid' target="_blank" rel="noreferrer" className='flex -space-x-1 items-center hover:underline'>
                 <SocialIcon network='instagram' bgColor="#131313" className='z-0' fgColor='#fff' style={{ height: 40, width: 40 }}/>

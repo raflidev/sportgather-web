@@ -61,7 +61,7 @@ function Venue() {
                     </Link>
                 </div>
             </div>
-            <div className='px-10 py-10'>
+            <div className='px-10 pt-4 pb-14'>
                 <div className='space-y-6'>
                     <div className='hover:underline'>
                         <Link to="/" className='flex items-center space-x-2 rounded px-2 py-1 mt-10'>
@@ -85,7 +85,7 @@ function Venue() {
                     }
                     </Slider>
 
-                    <div className='space-y-2'>
+                    <div className='space-y-3 pt-6'>
                         <h1 className='text-3xl font-bold'>{data.venue}</h1>
                         <p className='font-semibold text-lg text-gray-500'>{data.alamat}</p>
                     </div>
@@ -118,10 +118,10 @@ function Venue() {
                         }
                         {
                             data.fasilitas.lap_basket !== "-" &&
-                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_basket} Lapangan. 
+                            <p className='rounded bg-gray-100 text-black font-semibold  inline p-3 text-sm text-center'>{data.fasilitas.lap_basket} Lapangan 
                             {
                                 data.fasilitas.tipe !== "-" &&
-                                <span className='text-black font-semibold'> Tipe ({data.fasilitas.tipe})</span>
+                                <span className='text-black font-semibold'> {data.fasilitas.tipe}</span>
                             }
                             </p>
                         }
@@ -187,7 +187,7 @@ function Venue() {
 
                         <div className='w-full md:w-5/12'>
                             <h2 className='font-bold text-xl'>Keterangan</h2>
-                            <ol className='text-gray-500 list-disc text-sm pl-5'>
+                            <ol className='text-gray-500 list-disc text-sm pl-5 mt-3'>
                                 <li>
                                 booking via (
                                 {
@@ -227,12 +227,12 @@ function Venue() {
                 </div>
 
                 <div className='flex'>
-                    <a href={`https://api.whatsapp.com/send?phone=${data.no_wa}&text=Halo, saya mau booking ${data.venue}`} target="_blank" rel="noreferrer"  className='py-3 px-8 bg-green-300 rounded-full w-full text-center font-bold'>
+                    <a href={`https://api.whatsapp.com/send?phone=${data.no_wa}&text=Halo, saya mau booking ${data.venue}`} target="_blank" rel="noreferrer"  className='chat-cta py-3 px-8 bg-green-300 rounded-full w-full text-center font-bold'>
                         Chat Sekarang
                     </a>
                 </div>
 
-                <div className='pt-4'> 
+                <div className='mt-8'> 
                     <div className='space-y-4'>
                     <h1 className='text-3xl font-bold'>Lainnya</h1>
 

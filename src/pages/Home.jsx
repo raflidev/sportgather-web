@@ -33,9 +33,9 @@ function Home() {
                     <img src={logo} alt="" srcSet="" />
                 </Link>
             </div>
-            <div className='px-10 py-10'>
+            <div className='px-10 py-10 pb-14'>
                 <div className=''>         
-                    <div className='flex justify-end mt-10'>
+                    <div className='flex justify-end'>
                         <Select
                             onChange={handleFilter}
                             options={dataFilter}
